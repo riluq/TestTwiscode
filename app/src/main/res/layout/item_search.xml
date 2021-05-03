@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="search"
+            type="com.riluq.testtwiscode.data.remote.response.SearchResponse" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_95sdp"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{search.defaultPhoto.imgPath}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:src="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:textString="@{search.title}"
+                tools:text="Mieku"
+                android:textStyle="bold"
+                android:textSize="@dimen/_14ssp"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_search"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"/>
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:textMoney="@{search.price}"
+                tools:text="Rp. 8.000"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/_10ssp"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                android:layout_below="@id/tv_title"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"
+                android:layout_marginTop="@dimen/_6sdp"
+                app:layout_constraintEnd_toStartOf="@id/img_halal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp">
+                <ImageView
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_place"
+                    android:tint="@color/greyTextColor"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textString="@{search.locationName}"
+                    tools:text="Kota Surabaya"
+                    android:textColor="@color/greyTextColor"
+                    android:textSize="@dimen/_8ssp"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    android:layout_below="@id/tv_title"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/ll_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_toStartOf="@id/img_halal"
+                android:layout_toLeftOf="@id/img_halal"
+                app:layout_constraintEnd_toStartOf="@id/img_halal"
+                android:layout_below="@id/ll_location"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp">
+                <ImageView
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_user"
+                    android:tint="@color/greyTextColor"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textString="@{search.addedUserName}"
+                    tools:text="hennyseptiyan"
+                    android:textColor="@color/greyTextColor"
+                    android:textSize="@dimen/_8ssp"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    android:layout_below="@id/tv_title"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_halal"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                app:srcCompat="@drawable/ic_halal"
+                app:layout_constraintBottom_toTopOf="@id/btn_add"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:minHeight="0dp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="Tambah"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_username"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

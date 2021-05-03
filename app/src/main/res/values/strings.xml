@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Test Twiscode</string>
+
+    <string name="no_internet">No Internet Connection</string>
+    <string name="no_internet_swipe_down">No Internet Connection\nSwipe kebawah untuk merefresh</string>
+
+    <string name="title_dialog_exit_app">Keluar</string>
+    <string name="message_dialog_exit_app">Apakah anda yakin akan keluar dari aplikasi ini?</string>
+
+    <string name="title_dialog_delete">Hapus</string>
+
+    <string name="yes">Iya</string>
+    <string name="no">Tidak</string>
+</resources>

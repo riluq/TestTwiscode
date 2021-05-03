@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/ic_no_internet_connection"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tidak ada koneksi internet"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/errorColor"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_dialog_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:paddingEnd="56dp"
+        android:paddingStart="56dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="Refresh"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>
